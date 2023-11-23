@@ -19,11 +19,6 @@ jobs:
           distribution: 'adopt'
           java-version: '19'
 
-      - name: Set up Kotlin
-        uses: actions/setup-kotlin@v2
-        with:
-          kotlin-version: '1.5.31'
-
       - name: Compile
         run: |
           cd $GITHUB_WORKSPACE/

@@ -1,7 +1,7 @@
 CREATE TABLE users (
     user_id SERIAL PRIMARY KEY,
     username TEXT NOT NULL CHECK (username ~ '^[A-Za-z0-9_]{1,50}$'),
-    user_passwrd TEXT NOT NULL CHECK (password ~ '^.{10,30}$')
+    user_password TEXT NOT NULL CHECK (password ~ '^.{10,30}$')
 );
 
 CREATE TABLE light_parameters (

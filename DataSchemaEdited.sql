@@ -6,12 +6,10 @@ CREATE TABLE users (
 
 CREATE TABLE light_parameters (
     param_id SERIAL PRIMARY KEY,
-    min_brightness INTEGER NOT NULL CHECK (
-        min_brightness >= 25 AND min_brightness <= 100
-    ),
+    min_brightness INTEGER NOT NULL CHECK (min_brightness >= 25 AND min_brightness <= 100),
     check_time TIME NOT NULL,
     user_id INTEGER NOT NULL,
-    FOREIGN KEY (user_id) REFERENCES users (user_id)
+    FOREIGN KEY (user_id) REFERENCES users(user_id)
 );
 
 CREATE TABLE regulating_system (

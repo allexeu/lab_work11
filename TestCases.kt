@@ -1,3 +1,14 @@
+const val SUCCESS = 1
+const val PERIOD_ERROR = -1
+const val BRIGHTNESS_ERROR = -2
+
+fun setLightParams(checkTime: Int?, minBrightness: Float?): Int {
+    if (checkTime == null || checkTime < 0 || checkTime > 99) return PERIOD_ERROR;
+    if (minBrightness == null || minBrightness < 0 || minBrightness > 1) return BRIGHTNESS_ERROR
+
+    return SUCCESS;
+}
+
 class LightParamsTest {
     fun testCase1_1() {
         println("TC 1.1 (parameters pass validation; (checkTime = 1, minBrightness = 0.75f) = 1)")
@@ -18,14 +29,10 @@ class LightParamsTest {
     }
 }
 
-
-const val SUCCESS = 1
-const val PERIOD_ERROR = -1
-const val BRIGHTNESS_ERROR = -2
-
-fun setLightParams(checkTime: Int?, minBrightness: Float?): Int {
-    if (checkTime == null || checkTime < 0 || checkTime > 99) return PERIOD_ERROR;
-    if (minBrightness == null || minBrightness < 0 || minBrightness > 1) return BRIGHTNESS_ERROR
-
-    return SUCCESS;
+fun main() {
+    val lightParamsTest = LightParamsTest()
+    
+    lightParamsTest.testCase1_1()
+    lightParamsTest.testCase1_2()
+    lightParamsTest.testCase1_3()
 }

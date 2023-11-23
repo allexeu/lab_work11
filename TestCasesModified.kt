@@ -25,7 +25,7 @@ class LightParamsTest {
     fun testCase1_3() : Any {
         println("TC 1.1 (parameters don't pass validation; (checkTime = 1, minBrightness = -2f) = -2)")
         val tcResult = setLightParams(checkTime = 1, minBrightness = 1f)
-        return if (tcResult == -2) -2 else System.exit(-1)
+        return if (tcResult == -2) -2 else exitProcess(-1)
     }
 }
 

@@ -10,22 +10,22 @@ fun setLightParams(checkTime: Int?, minBrightness: Float?): Int {
 }
 
 class LightParamsTest {
-    fun testCase1_1() {
+    fun testCase1_1() : Any {
         println("TC 1.1 (parameters pass validation; (checkTime = 1, minBrightness = 0.75f) = 1)")
         val tcResult = setLightParams(checkTime = 1, minBrightness = 0.75f)
-        return 1 if (tcResult == 1) else System.exit(-1)
+        return if (tcResult == 1) 1 else System.exit(-1)
     }
 
-    fun testCase1_2() {
+    fun testCase1_2() : Any {
         println("TC 1.1 (parameters don't pass validation; (checkTime = -1, minBrightness = 0.5f) = -1)")
         val tcResult = setLightParams(checkTime = -1, minBrightness = 0.5f)
-        return -1 if (tcResult == -1) else System.exit(-1)
+        return if (tcResult == -1) -1 else System.exit(-1)
     }
 
-    fun testCase1_3() {
+    fun testCase1_3() : Any {
         println("TC 1.1 (parameters don't pass validation; (checkTime = 1, minBrightness = -2f) = -2)")
         val tcResult = setLightParams(checkTime = 1, minBrightness = -2f)
-        return -2 if (tcResult == -2) else System.exit(-1)
+        return if (tcResult == -2) -2 else System.exit(-1)
     }
 }
 

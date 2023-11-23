@@ -18,8 +18,8 @@ jobs:
         distribution: 'adopt'
         java-version: '19'
 
-    - name: Compile
-      run: kotlinc TestCases.kt -include-runtime -d app.jar
+    - name: Build with Gradle
+      run: ./gradlew build
 
     - name: Execute Tests
-      run: java -jar app.jar
+      run: java -jar build/libs/app.jar

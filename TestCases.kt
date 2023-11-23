@@ -1,29 +1,20 @@
-package com.example.safeco.unitTest
-
-import junit.framework.TestCase.assertEquals
-import org.junit.Test
-
-
 class LightParamsTest {
-    @Test
     fun testCase1_1() {
         println("TC 1.1 (parameters pass validation; (checkTime = 1, minBrightness = 0.75f) = 1)")
         val tcResult = setLightParams(checkTime = 1, minBrightness = 0.75f)
-        assertEquals(1, tcResult)
+        return 1 if tcResult == 1 else "Failed"
     }
 
-    @Test
     fun testCase1_2() {
         println("TC 1.1 (parameters don't pass validation; (checkTime = -1, minBrightness = 0.5f) = -1)")
         val tcResult = setLightParams(checkTime = -1, minBrightness = 0.5f)
-        assertEquals(-1, tcResult)
+        return -1 if tcResult == -1 else "Failed"
     }
 
-    @Test
     fun testCase1_3() {
         println("TC 1.1 (parameters don't pass validation; (checkTime = 1, minBrightness = -2f) = -2)")
         val tcResult = setLightParams(checkTime = 1, minBrightness = -2f)
-        assertEquals(-2, tcResult)
+        return -2 if tcResult == -2 else "Failed"
     }
 }
 

@@ -1,5 +1,3 @@
-package com.example.safeco
-
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
@@ -10,12 +8,7 @@ import com.example.safeco.repos.LightParamsRepo
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.ktx.Firebase
-import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.ktx.database
-import com.google.firebase.database.ktx.getValue
-import com.example.safeco.R
 import kotlinx.parcelize.Parcelize
-import kotlinx.android.synthetic.main.activity_light.*
 
 // Клас LightParams використовується для представлення параметрів освітлення
 // і позначений анотацією @Parcelize для передачі між активностями.
@@ -27,8 +20,8 @@ data class LightParams(
 
 // Клас LightParamsRepo відповідає за зберігання параметрів освітлення в базі даних Firebase.
 class LightParamsRepo {
-    private val database: FirebaseDatabase = Firebase.database
-    private val lightParamsRef: DatabaseReference = database.reference.child("light_params")
+    private val database = FirebaseDatabase.getInstance()
+    private val lightParamsRef = database.reference.child("light_params")
 
     // Додає параметри освітлення до бази даних за заданим ідентифікатором користувача.
     fun add(uid: String, lightParams: LightParams) {
